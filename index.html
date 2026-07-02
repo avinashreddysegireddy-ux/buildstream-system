@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuildStream</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 34 34" fill="none">
+        <rect x="1" y="1" width="32" height="32" rx="7" stroke="#FF8A3D" stroke-width="2"/>
+        <path d="M8 17 H14 L17 11 L20 23 L23 17 H26" stroke="#FF8A3D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <h1>BuildStream</h1>
+        <div class="sub">pipeline runner · live log stream</div>
+      </div>
+    </div>
+    <button class="trigger" id="triggerBtn" onclick="startBuild()">Run build</button>
+  </header>
+
+  <div class="layout">
+    <div>
+      <div class="card">
+        <h2>Pipeline</h2>
+        <div class="track" id="track"></div>
+      </div>
+
+      <div class="card">
+        <div class="status-row">
+          <h2 style="margin:0;">Log stream</h2>
+          <span class="badge idle" id="statusBadge">Idle</span>
+        </div>
+        <div class="console" id="console">
+          <div class="line dim">Waiting for a build. Click "Run build" to start streaming output.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="height:fit-content;">
+      <h2>Recent builds</h2>
+      <div id="history">
+        <div class="empty">No builds yet.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>BuildStream · simple base template — extend stages, wire a real backend, or plug in your CI provider.</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
